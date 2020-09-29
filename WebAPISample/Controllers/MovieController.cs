@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,17 +23,19 @@ namespace WebAPISample.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            var getMovies = _context.Movies.ToList();
             // Retrieve all movies from db logic
-            return Ok(new string[] { "movie1 string", "movie2 string" });
+            return Ok(getMovies);
         }
 
         // GET api/movie/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
+            var getMovieById = _context.Movies.Where(m => m.MovieId == id);
             // Retrieve movie by id from db logic
             // return Ok(movie);
-            return Ok();
+            return Ok(getMovieById);
         }
 
         // POST api/movie
