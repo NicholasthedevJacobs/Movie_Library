@@ -56,7 +56,7 @@ namespace WebAPISample.Controllers
         public IActionResult Put([FromBody] Movie movie)
         {                                                                                   
             // Update movie in db logic
-            _context.Movies.Where(m => m.MovieId == movie.MovieId).SingleOrDefault();
+            //_context.Movies.Where(m => m.MovieId == movie.MovieId).SingleOrDefault();
             _context.Update(movie);
             _context.SaveChanges();
             return Ok(movie);
