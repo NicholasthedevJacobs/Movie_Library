@@ -92,34 +92,34 @@ function addMovie(e){
             e.preventDefault();
         }
 
-        function updateMovie(e){
-            // document.getElementById("AddMovie").innerHTML = 
-                    //console.log(e);
+function updateMovie(e){
+    // document.getElementById("AddMovie").innerHTML = 
+            //console.log(e);
+    
+            var dict = {
             
-                    var dict = {
-                    
-                        Title : document.getElementById("title").value,
-                         Director: document.getElementById("director").value,
-                         Genre: document.getElementById("genre").value,
-                    };
-                        //console.log("dict", dict);   
-                    $.ajax({
-                        url: 'https://localhost:44325/api/movie',
-                        dataType: "json",           
-                        type: 'put',
-                        contentType: 'application/json',
-                        data: JSON.stringify(dict),
-                        success: function( data, textStatus, jQxhr ){
-                            // $('#response pre').html( data );
-                            console.log(data);
-                        },
-                        error: function( jqXhr, textStatus, errorThrown ){
-                            console.log( errorThrown );
-                        }
-                    });
-            
-                    e.preventDefault();
+                Title : document.getElementById("title").value,
+                    Director: document.getElementById("director").value,
+                    Genre: document.getElementById("genre").value,
+            };
+                //console.log("dict", dict);   
+            $.ajax({
+                url: 'https://localhost:44325/api/movie',
+                dataType: "json",           
+                type: 'put',
+                contentType: 'application/json',
+                data: JSON.stringify(dict),
+                success: function( data, textStatus, jQxhr ){
+                    // $('#response pre').html( data );
+                    console.log(data);
+                },
+                error: function( jqXhr, textStatus, errorThrown ){
+                    console.log( errorThrown );
                 }
+            });
+    
+            e.preventDefault();
+        }
         
     
            
