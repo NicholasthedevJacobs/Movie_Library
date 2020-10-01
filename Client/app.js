@@ -1,3 +1,5 @@
+
+
 // function searchBYMovieId(){
 //     (function($){
 //         function processForm( e ){
@@ -32,9 +34,9 @@
 // }
 function getMovieByID(el){
     // document.getElementById("AddMovie").innerHTML = 
-           let thing = $("#movieID").val();
+           let inputID = $("#movieID").val();
 
-            let apiEndpoint = `https://localhost:44325/api/movie/${thing}`;
+            let apiEndpoint = `https://localhost:44325/api/movie/${inputID}`;
             $.get(apiEndpoint,function(data){
                 console.log(data)
 
@@ -48,19 +50,19 @@ function getMovieByID(el){
             
     }
 
-    $(function(){
+$(function(){
 
-        $.get("https://localhost:44325/api/movie/", function(data){
-            console.log(data);
-    
-            data.map(function(el){
-                $("#Movies").append(`<div> Title: ${el.title} </div>
-                <div> Director: ${el.director}</div>
-                <div> Genre: ${el.genre}</div>
-                <br>`);
-            })
+    $.get("https://localhost:44325/api/movie/", function(data){
+        console.log(data);
+
+        data.map(function(el){
+            $("#Movies").append(`<tr><td><div> Title: ${el.title} </div>
+            <div> Director: ${el.director}</div>
+            <div> Genre: ${el.genre}</td></tr></div>
+            <br>`);
         })
     })
+})
     
 
 function addMovie(e){
@@ -95,14 +97,10 @@ function addMovie(e){
 function updateMovie(e){
     // document.getElementById("AddMovie").innerHTML = 
             //console.log(e);
-    
-            var dict = {
+        let movieToUpdate = $("#title").val();
+            //let movieToUpdate = getMovieByID();
             
-                Title : document.getElementById("title").value,
-                Director: document.getElementById("director").value,
-                Genre: document.getElementById("genre").value,
-            };
-                console.log("dict", dict);   
+                console.log(movieToUpdate);   
             $.ajax({
                 url: 'https://localhost:44325/api/movie',
                 dataType: "json",           

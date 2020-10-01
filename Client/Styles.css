@@ -1,0 +1,9 @@
+.navcontainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 26px;
+  } 
+
+  .my-nav-bar{
+    display: inline-flex;
+  }
