@@ -36,13 +36,13 @@ function getMovieByID(e){
     
             var dict = {
             
-                MovieId: this["movieID"].value
+                MovieId: document.getElementById("movieID").value
             };
     
             
     
             $.ajax({
-                url: 'https://localhost:44325/api/movie',
+                url: $`https://localhost:44325/api/movie/${id}`,
                 dataType: "json",           
                 type: 'get',
                 contentType: 'application/json',
