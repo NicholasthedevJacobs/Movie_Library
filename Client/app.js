@@ -30,6 +30,33 @@ function searchBYMovieId(){
         $('#my-movie-search').submit( processForm );
     })(jQuery);
 }
+function getMovieByID(e){
+    // document.getElementById("AddMovie").innerHTML = 
+            //console.log(e);
+    
+            var dict = {
+            
+                MovieId: this["movieID"].value
+            };
+    
+            
+    
+            $.ajax({
+                url: 'https://localhost:44325/api/movie',
+                dataType: "json",           
+                type: 'get',
+                contentType: 'application/json',
+                data: JSON.stringify(dict),
+                success: function( data, textStatus, jQxhr ){
+                    $('#response pre').html( data );
+                },
+                error: function( jqXhr, textStatus, errorThrown ){
+                    console.log( errorThrown );
+                }
+            });
+    
+            e.preventDefault();
+        }
 
 // (function($){
 //     function processForm( e ){
@@ -99,8 +126,8 @@ function updateMovie(e){
             var dict = {
             
                 Title : document.getElementById("title").value,
-                    Director: document.getElementById("director").value,
-                    Genre: document.getElementById("genre").value,
+                Director: document.getElementById("director").value,
+                Genre: document.getElementById("genre").value,
             };
                 //console.log("dict", dict);   
             $.ajax({
