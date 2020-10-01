@@ -11,15 +11,23 @@
 </div>
 
 <form id="my-form">
-    <input type="text" name="title" placeholder="Title" />
-    <input type="text" name="director" placeholder="Director" />
-    <input type="text" name="genre" placeholder="Genre" />
-    <input type="text" name="movieID" placeholder="MovieId" />
-
-    <button type="submit">Submit</button>
+    
 </form>
-<div id="Add-Movie"></div>
-<div id="Update-Movie"></div>
+
+<div id="Add-Movie">
+    <input type="text" id="title" name="title" placeholder="Title" />
+    <input type="text" id="director" name="director" placeholder="Director" />
+    <input type="text" id="genre" name="genre" placeholder="Genre" />
+    <!-- <button id="AddMovie">Add Movie1</button> -->
+    <button onclick="addMovie(event)">Add Movie</button></div>
+</div>
+<!-- <button onclick="addMovie()">Add Movie</button></div> -->
+<div id="Update-Movie">
+    <input type="text"  name="title" placeholder="Title" />
+    <input type="text"  name="director" placeholder="Director" />
+    <input type="text"  name="genre" placeholder="Genre" />        
+    <button onclick="updateMovie(event)">Update</button></div>
+</div>
 <div id="Delete-Movie"></div>
 <form id="my-movie-search">
     <input type="text" name="movieID" placeholder="Title" />
