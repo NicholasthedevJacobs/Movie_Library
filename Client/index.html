@@ -6,6 +6,7 @@
 </head>
 <body>
 
+    <div id="Movies"></div>
 <div id="response">
     <pre></pre>
 </div>
@@ -13,9 +14,11 @@
 <form id="my-form">
     
 </form>
+
 <div id="Get-By-ID">
-    <input type="text" id="movieID" placeholder="MovieId" />
-    <button onclick="getMovieByID(event)">Find Movie</button></div>
+    <input type="text" id="movieID" name="movieID" placeholder="MovieId" />
+    
+    <button onclick="getMovieByID()">Find Movie</button></div>
 </div>
 <div id="Add-Movie">
     <input type="text" id="title" name="title" placeholder="Title" />

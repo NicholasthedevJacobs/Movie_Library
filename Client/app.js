@@ -1,94 +1,67 @@
-function searchBYMovieId(){
-    (function($){
-        function processForm( e ){
-            var dict = {
+// function searchBYMovieId(){
+//     (function($){
+//         function processForm( e ){
+//             var dict = {
             
-                MovieId: this["movieID"].value
-            };
+//                 MovieId: this["movieID"].value
+//             };
     
             
     
-            $.ajax({
-                url: 'https://localhost:44325/api/movie',
-                dataType: "json",           
-                type: 'get',
-                contentType: 'application/json',
-                data: JSON.stringify(dict),
-                success: function( data, textStatus, jQxhr ){
-                    $('#response pre').html( data );
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
-                }
-            });
+//             $.ajax({
+//                 url: 'https://localhost:44325/api/movie',
+//                 dataType: "json",           
+//                 type: 'get',
+//                 contentType: 'application/json',
+//                 data: JSON.stringify(dict),
+//                 success: function( data, textStatus, jQxhr ){
+//                     $('#response pre').html( data );
+//                 },
+//                 error: function( jqXhr, textStatus, errorThrown ){
+//                     console.log( errorThrown );
+//                 }
+//             });
     
-            e.preventDefault();
-        }
+//             e.preventDefault();
+//         }
     
         
     
-        $('#my-movie-search').submit( processForm );
-    })(jQuery);
-}
-function getMovieByID(e){
+    //     $('#my-movie-search').submit( processForm );
+    // })(jQuery);
+// }
+function getMovieByID(el){
     // document.getElementById("AddMovie").innerHTML = 
-            //console.log(e);
-    
-            var dict = {
+           let thing = $("#movieID").val();
+
+            let apiEndpoint = `https://localhost:44325/api/movie/${thing}`;
+            $.get(apiEndpoint,function(data){
+                console.log(data)
+
+                $("#Get-By-ID").append(`<div> Title: ${data.title} </div>
+                <div> Director: ${data.director}</div>
+                <div> Genre: ${data.genre}</div>
+                <br>`);
+
+               
+            })
             
-                MovieId: document.getElementById("movieID").value
-            };
+    }
+
+    $(function(){
+
+        $.get("https://localhost:44325/api/movie/", function(data){
+            console.log(data);
     
-            
+            data.map(function(el){
+                $("#Movies").append(`<div> Title: ${el.title} </div>
+                <div> Director: ${el.director}</div>
+                <div> Genre: ${el.genre}</div>
+                <br>`);
+            })
+        })
+    })
     
-            $.ajax({
-                url: $`https://localhost:44325/api/movie/${id}`,
-                dataType: "json",           
-                type: 'get',
-                contentType: 'application/json',
-                data: JSON.stringify(dict),
-                success: function( data, textStatus, jQxhr ){
-                    $('#response pre').html( data );
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
-                }
-            });
-    
-            e.preventDefault();
-        }
-
-// (function($){
-//     function processForm( e ){
-//         var dict = {
-        
-//             MovieId: this["movieID"].value
-//         };
-
-        
-
-//         $.ajax({
-//             url: 'https://localhost:44325/api/movie',
-//             dataType: "json",           
-//             type: 'get',
-//             contentType: 'application/json',
-//             data: JSON.stringify(dict),
-//             success: function( data, textStatus, jQxhr ){
-//                 $('#response pre').html( data );
-//             },
-//             error: function( jqXhr, textStatus, errorThrown ){
-//                 console.log( errorThrown );
-//             }
-//         });
-
-//         e.preventDefault();
-//     }
-
-    
-
-//     $('#my-movie-search').submit( processForm );
-// })(jQuery);
-//document.getElementById("AddMovie").addEventListener("click", addMovie);
 
 function addMovie(e){
     // document.getElementById("AddMovie").innerHTML = 
@@ -97,10 +70,10 @@ function addMovie(e){
             var dict = {
             
                 Title : document.getElementById("title").value,
-                 Director: document.getElementById("director").value,
-                 Genre: document.getElementById("genre").value,
+                Director: document.getElementById("director").value,
+                Genre: document.getElementById("genre").value,
             };
-                //console.log("dict", dict);   
+                console.log("dict", dict);   
             $.ajax({
                 url: 'https://localhost:44325/api/movie',
                 dataType: "json",           
@@ -129,7 +102,7 @@ function updateMovie(e){
                 Director: document.getElementById("director").value,
                 Genre: document.getElementById("genre").value,
             };
-                //console.log("dict", dict);   
+                console.log("dict", dict);   
             $.ajax({
                 url: 'https://localhost:44325/api/movie',
                 dataType: "json",           
