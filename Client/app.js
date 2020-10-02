@@ -108,30 +108,45 @@ function addMovie(e){
             e.preventDefault();
         }
 
-function updateMovie(e){
-    // document.getElementById("AddMovie").innerHTML = 
-            //console.log(e);
-        let movieToUpdate = $("#title").val();
-            //let movieToUpdate = getMovieByID();
+
+    // (function ($) {
+    //     movies = []
+    //     MoviesId = -1;
+    // })
+    // function updateMovie(e){
+    // // document.getElementById("AddMovie").innerHTML = 
+    //         //console.log(e);
+    //         var dict = {
+    //             MovieId: MoviesId,
+    //             Title : this["title"].value,
+    //             Director: this["director"].value,
+    //             Genre: this["genre"].value,
+                
+    //         }
+        
+    //         //let movieToUpdate = getMovieByID();
             
-                console.log(movieToUpdate);   
-            $.ajax({
-                url: 'https://localhost:44325/api/movie',
-                dataType: "json",           
-                type: 'put',
-                contentType: 'application/json',
-                data: JSON.stringify(dict),
-                success: function( data, textStatus, jQxhr ){
-                    // $('#response pre').html( data );
-                    console.log(data);
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
-                }
-            });
+    //             //console.log(movieToUpdate);   
+    //         $.ajax({
+    //             url: 'https://localhost:44325/api/movie',
+    //             dataType: "json",           
+    //             type: 'put',
+    //             contentType: 'application/json',
+    //             data: JSON.stringify(dict),
+    //             success: function( data, textStatus, jQxhr ){
+    //                 $('#response pre').html( data );
+    //                 console.log(data);
+    //             },
+    //             error: function( jqXhr, textStatus, errorThrown ){
+    //                 console.log( errorThrown );
+    //             }
+    //         }).then(function(){
+    //             getAllMovies();
+
+    //         })
     
-            e.preventDefault();
-        }
+    //         e.preventDefault();
+    //     }
         
     
            
@@ -167,8 +182,8 @@ function updateMovie(e){
 
     
 
-//     $('#Update-Movie').submit( processForm );
-// })(jQuery);
+    $('#Update-Movie').submit( processForm );
+})(jQuery);
 
 (function($){
     function processForm( e ){
@@ -205,7 +220,8 @@ function updateMovie(e){
     $('#Delete-Movie').submit( processForm );
 })(jQuery);
 
-function getAllMovies(){
+function getAllMovies( ){
+    
     $("#displayMovies").html(" ");
 
     
@@ -219,16 +235,16 @@ function getAllMovies(){
         success: function (data, textStatus, jQxhr){
             console.log("Success");
             console.log(data);
-            var tableContent = '<tr>'
+            
             for (let i = 0; i<data.length; i++){
                 $("#displayMovies").append(
                 `<tr><td>
                  ${data[i]["title"]}
-                 ${data[i]["director"]}
-                 ${data[i]["genre"]} 
+                <th> ${data[i]["director"]}</th>
+                 <th>${data[i]["genre"]} </th>
                 </td></tr>`)
 
-               
+                
             };
         }
     })

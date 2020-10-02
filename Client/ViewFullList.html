@@ -54,31 +54,35 @@
 
     <body>
 
-        
-        <table id ="displayMovies">
+        <div class = "container">
+            <table id ="displayMovies">
             
                 <table>
                     
                     <tr class="table">
-                        
-                      <th>Movie Title</th>
-                      <th>Director</th>
-                      <th>Genre</th>
+                        <th> Movie Title</th>
+                        <th> Director</th>
+                        <th> Genre</th>
                       
                     </tr>
-                    <tr class="table">
-                        <script>getAllMovies()</script>
-                        <button onclick="getAllMovies()">Get List</button>
-                    </tr>                   
-                  </table>
+                                    
+                </table>   
                 
-                
-            <script>getAllMovies()</script>
             
-                
-            </tr>
         </table>
+        <div class="table-container">
+            <table>
+                <tr class="table">
+                <body onload="getAllMovies();"></body>
+                
+                </tr>   
+            </table> 
+        </div>
+        
+        </div>
+       
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="./app.js"></script>
     </body>
+   
