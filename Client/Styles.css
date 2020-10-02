@@ -66,3 +66,10 @@
     padding-top: 500px;
     justify-content: left;
 }
+
+.Welcome{
+  font-size: 100px;
+  text-align: center;
+  padding-top: 200px;
+  color: deeppink;
+}

@@ -32,7 +32,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Delete</a>
                   </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Action</a>
@@ -41,7 +41,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Separated link</a>
                   </div>
-                </li>
+                </li> -->
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -51,40 +51,13 @@
           </nav>
         
     </header>
+    <body>
+      <div class="Welcome">
+        <p>Welcome to Movie Central.  Your hub for looking at movies and stuff.</p>
+      </div>
+      
+    </body>
 
-    <div id="Movies"></div>
-<div id="response">
-    <pre></pre>
-</div>
-
-<form id="my-form">
-    
-</form>
-
-<div id="Get-By-ID">
-    <input type="text" id="movieID" name="movieID" placeholder="MovieId" />
-    
-    <button onclick="getMovieByID()">Find Movie</button></div>
-</div>
-<div id="Add-Movie">
-    <input type="text" id="title" name="title" placeholder="Title" />
-    <input type="text" id="director" name="director" placeholder="Director" />
-    <input type="text" id="genre" name="genre" placeholder="Genre" />
-    <button onclick="addMovie(event)">Add Movie</button></div>
-</div>
-<div id="Update-Movie">
-    <input type="text" id="title" name="title" placeholder="Title" />
-    <!-- <input type="text" id="director" name="director" placeholder="Director" />
-    <input type="text" id="genre" name="genre" placeholder="Genre" />        
-    <input type="text" id="movieID" name="movieID" placeholder="MovieId" /> -->
-    <button onclick="updateMovie(event)">Update</button>
-</div>
-
-<div id="Delete-Movie"></div>
-<form id="my-movie-search">
-    <input type="text" name="movieID" placeholder="Title" />
-    <button type="submit">Submit</button>
-</form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="./app.js"></script>

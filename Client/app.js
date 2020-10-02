@@ -109,44 +109,44 @@ function addMovie(e){
         }
 
 
-    // (function ($) {
-    //     movies = []
-    //     MoviesId = -1;
-    // })
-    // function updateMovie(e){
-    // // document.getElementById("AddMovie").innerHTML = 
-    //         //console.log(e);
-    //         var dict = {
-    //             MovieId: MoviesId,
-    //             Title : this["title"].value,
-    //             Director: this["director"].value,
-    //             Genre: this["genre"].value,
+    (function ($) {
+        movies = []
+        MoviesId = -1;
+    })
+    function updateMovie(e){
+    // document.getElementById("AddMovie").innerHTML = 
+            //console.log(e);
+            var dict = {
+                MovieId: MoviesId,
+                Title : this["title"].value,
+                Director: this["director"].value,
+                Genre: this["genre"].value,
                 
-    //         }
+            }
         
-    //         //let movieToUpdate = getMovieByID();
+            //let movieToUpdate = getMovieByID();
             
-    //             //console.log(movieToUpdate);   
-    //         $.ajax({
-    //             url: 'https://localhost:44325/api/movie',
-    //             dataType: "json",           
-    //             type: 'put',
-    //             contentType: 'application/json',
-    //             data: JSON.stringify(dict),
-    //             success: function( data, textStatus, jQxhr ){
-    //                 $('#response pre').html( data );
-    //                 console.log(data);
-    //             },
-    //             error: function( jqXhr, textStatus, errorThrown ){
-    //                 console.log( errorThrown );
-    //             }
-    //         }).then(function(){
-    //             getAllMovies();
+                //console.log(movieToUpdate);   
+            $.ajax({
+                url: 'https://localhost:44325/api/movie',
+                dataType: "json",           
+                type: 'put',
+                contentType: 'application/json',
+                data: JSON.stringify(dict),
+                success: function( data, textStatus, jQxhr ){
+                    $('#response pre').html( data );
+                    console.log(data);
+                },
+                error: function( jqXhr, textStatus, errorThrown ){
+                    console.log( errorThrown );
+                }
+            }).then(function(){
+                getAllMovies();
 
-    //         })
+            })
     
-    //         e.preventDefault();
-    //     }
+            e.preventDefault();
+        }
         
     
            
@@ -182,8 +182,8 @@ function addMovie(e){
 
     
 
-    $('#Update-Movie').submit( processForm );
-})(jQuery);
+//     $('#Update-Movie').submit( processForm );
+// })(jQuery);
 
 (function($){
     function processForm( e ){
