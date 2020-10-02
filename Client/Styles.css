@@ -17,6 +17,7 @@
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    color: yellow;
     
   }
   
@@ -27,7 +28,7 @@
   }
   
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: blueviolet;
   }
 
   .Add-Movie{
@@ -65,6 +66,7 @@
 .table-container{
     padding-top: 500px;
     justify-content: left;
+    
 }
 
 .Welcome{
@@ -72,4 +74,8 @@
   text-align: center;
   padding-top: 200px;
   color: deeppink;
+}
+
+.fuck{
+  color: blue;
 }
