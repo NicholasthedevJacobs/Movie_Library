@@ -49,7 +49,21 @@ function getMovieByID(el){
             })
             
     }
+function getList(el){
+    $(function(){
 
+        $.get("https://localhost:44325/api/movie/", function(data){
+            console.log(data);
+    
+            data.map(function(el){
+                $("#Movies").append(`<tr><td><div> Title: ${el.title} </div>
+                <div> Director: ${el.director}</div>
+                <div> Genre: ${el.genre}</td></tr></div>
+                <br>`);
+            })
+        })
+    })
+}
 $(function(){
 
     $.get("https://localhost:44325/api/movie/", function(data){
@@ -186,9 +200,39 @@ function updateMovie(e){
     }
 
     
+    
 
     $('#Delete-Movie').submit( processForm );
 })(jQuery);
+
+function getAllMovies(){
+    $("#displayMovies").html(" ");
+
+    
+
+        
+    
+    $.ajax({
+        url: "https://localhost:44325/api/movie",
+        contentType: 'application/json',
+        type: 'get',
+        success: function (data, textStatus, jQxhr){
+            console.log("Success");
+            console.log(data);
+            var tableContent = '<tr>'
+            for (let i = 0; i<data.length; i++){
+                $("#displayMovies").append(
+                `<tr><td>
+                 ${data[i]["title"]}
+                 ${data[i]["director"]}
+                 ${data[i]["genre"]} 
+                </td></tr>`)
+
+               
+            };
+        }
+    })
+}
 
 // function updateMovie(){
 //     $(function($){

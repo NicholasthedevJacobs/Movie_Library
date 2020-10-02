@@ -51,21 +51,34 @@
           </nav>
         
     </header>
-    <body>
-        <div class="center-text">
-            <p style="justify-content: center;">Add A Movie To The Database</p>
-        </div>
-        <div class="container">
-            <div class="Add-Movie">
-                
-                <input  type="text" id="title" name="title" placeholder="Title" />
-                <input type="text" id="director" name="director" placeholder="Director" />
-                <input type="text" id="genre" name="genre" placeholder="Genre" />
-                <button onclick="addMovie(event)">Add Movie</button></div>
-            </div>
-        </div>
-        <
 
+    <body>
+
+        
+        <table id ="displayMovies">
+            
+                <table>
+                    
+                    <tr class="table">
+                        
+                      <th>Movie Title</th>
+                      <th>Director</th>
+                      <th>Genre</th>
+                      
+                    </tr>
+                    <tr class="table">
+                        <script>getAllMovies()</script>
+                        <button onclick="getAllMovies()">Get List</button>
+                    </tr>                   
+                  </table>
+                
+                
+            <script>getAllMovies()</script>
+            
+                
+            </tr>
+        </table>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="./app.js"></script>
     </body>
